@@ -1,0 +1,56 @@
+1.	Выведите перечень сумм заказов продавца Rifkin.
+SELECT o.amt
+FROM Orders o, Salespeople s
+WHERE o.snum=s.snum AND s.sname='Rifkin'
+
+SELECT amt
+FROM Orders o
+WHERE snum =
+(SELECT snum
+FROM Salespeople
+WHERE sname = 'Rifkin'
+)
+2.	Определите  комиссионные всех продавцов, обслуживающих заказчиков в Риме
+FROM Salespeople s, Customers c
+WHERE c.snum=s.snum AND c.city LIKE 'Rome';
+
+SELECT com
+FROM Salespeople 
+WHERE snum IN
+(SELECT snum
+FROM Customers
+WHERE city LIKE 'Rome'
+)
+3.	Напишите запрос, который определит заказчиков имеющих рейтинг ниже среднего.
+SELECT cname, rating
+FROM Customers
+WHERE rating <
+(SELECT AVG(rating)
+FROM Customers
+)
+
+4.	Определите города проживания заказчиков с наименьшим рейтингом.
+SELECT city, MIN(rating)
+FROM Customers
+GROUP BY city
+HAVING MIN(rating) =
+(SELECT MIN(rating)
+FROM Customers
+)
+
+SELECT city, MAX(rating)
+FROM Customers
+GROUP BY city
+HAVING MAX(rating) =
+(SELECT MIN(rating)
+FROM Customers
+)
+5.	Напишите запрос, который выводил бы заказы клиента Liu
+
+6.	Определите наибольшие комиссионные продавца для Рима.
+
+7.	Напишите запрос который выведет всех клиентов обслуживаемых продавцом Motiка.
+
+8.	Напишите запрос, который выведет максимальный рейтинг заказчика для продавцов имеющих комиссионные больше 0,11%.
+
+
