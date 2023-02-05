@@ -1,15 +1,19 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+<div class="container">
   <h1>Генератор паролей</h1>
   <form action="{% url 'password' %}">
       <p><select name="length" >
           {% for i in lst %}
-          {% if i == 12 %}
+          {% if i == 20 %}
           <option value="{{i}}" selected>{{i}}</option>
           {% else %}
           <option value="{{i}}">{{i}}</option>
@@ -23,6 +27,7 @@
       </p>
         <input type="submit" value="Сгенерировать пароль">
   </form>
+    </div>
     
 </body>
 </html>
