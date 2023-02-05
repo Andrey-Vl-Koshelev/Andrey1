@@ -15,3 +15,51 @@ body{
     box-sizing: border-box;
     border-radius: 6px;
 }
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background:antiquewhite;
+    padding: 20px;
+    margin-top: 0;
+}
+.name {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background: rgb(196, 189, 179);
+    padding: 20px;
+    margin-top: 0;
+}
+.rules {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background: rgb(225, 175, 104);
+    padding: 20px;
+    margin-top: 0;
+}
+.password {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background: rgb(104, 181, 225);
+    padding: 20px;
+    margin-top: 0;
+}
+.password a {
+    font-weight: bold;
+    color: #FFF
+}
+.menu a {
+    font-weight: bold;
+    color: rgb(216, 83, 83)
+}
+.name a {
+    font-weight: bold;
+    color: rgb(90, 86, 86)
+}
+.rules a {
+    font-weight: bold;
+    color: rgb(255, 255, 255)
+}

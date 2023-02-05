@@ -1,14 +1,12 @@
-
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-<div class="container">
+{% extends 'generator/base.html' %}
+{% block title %}
+Генератор паролей
+{% endblock %}
+{% block content %}
+    <ul class="menu">
+        <li><a href="{% url 'name' %}">Данные об авторе</a></li>
+        <li><a href="{% url 'rules' %}">Правила формирования паролей</a></li>
+    </ul>
   <h1>Генератор паролей</h1>
   <form action="{% url 'password' %}">
       <p><select name="length" >
@@ -27,7 +25,4 @@
       </p>
         <input type="submit" value="Сгенерировать пароль">
   </form>
-    </div>
-    
-</body>
-</html>
+{% endblock %}

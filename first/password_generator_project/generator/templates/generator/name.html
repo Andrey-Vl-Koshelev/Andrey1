@@ -1,0 +1,14 @@
+{% extends 'generator/base.html' %}
+{% block title %}
+Об авторе
+{% endblock %}
+
+{% block content %}
+    <ul class="name">
+        <li><a href="{% url 'home' %}">Вернуться на главную страницу</a></li>
+        <li><a href="{% url 'rules' %}">Перейти на страницу 'Правила формирования паролей'</a></li>
+    </ul>
+    <h1>Данные об авторе</h1>
+        <p>Здесь размещается информация об авторе.</p>
+
+{% endblock %}
