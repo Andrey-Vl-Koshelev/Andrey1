@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Рецепты</title>
+    <link rel="icon" type="image/x-icon"  href="{% static 'webs/favicon.ico' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
         a {
@@ -12,7 +13,39 @@
     </style>
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+
+{% if user.is_authenticated %}
+<div class="menu">
+    <div class="wrap">
+        <ul>
+            <li><a href="logo">Пользователь: {{ user.username }}</a></li>
+            <li><a href="{% url 'currentweb' %}">Актуальные</a></li>
+            <li>
+                <form action="{% url 'logoutuser' %}" method="post">
+                    {% csrf_token %}
+                    <button class="top">Выйти</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+{% else %}
+<div class="menu">
+    <div class="wrap">
+        <ul>
+            <li><a href="{% url 'signupuser' %}">Зарегистрироваться</a></li>
+            <li><a href="{% url 'loginuser' %}">Войти</a></li>
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+<div class="content">
+    <div class="wrap">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
 </body>
 </html>
