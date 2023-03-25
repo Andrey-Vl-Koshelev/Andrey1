@@ -1,5 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+{% load static %}
 
 <h1>{{ title }}</h1>
 
@@ -9,7 +10,9 @@
         <p class="first">Категория: {{ p.cat }}</p>
         <div class="text">
             {% if p.photo %}
-            <img src="{{ p.photo.url }}" alt="" class="image">
+                <img src="{{ p.photo.url }}" alt="" class="image">
+            {% else %}
+            <img src="{% static 'blog/default.jpg' %}" alt="" class="image">
             {% endif %}
             <h2>
                 <a href="{{ p.get_absolute_url }}">
