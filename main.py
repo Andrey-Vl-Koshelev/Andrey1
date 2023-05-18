@@ -2,6 +2,8 @@
 # import re
 #
 # from car import electrocar
+import random
+
 
 # def main():
 #     e_car = electrocar.ElectroCar('Tesla', 'T', 2018, 99000)
@@ -4630,4 +4632,5 @@
 # msg = tm.render(list_table=subs)
 #
 # print(msg)
+
 
