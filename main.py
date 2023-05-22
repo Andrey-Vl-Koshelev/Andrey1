@@ -4632,5 +4632,27 @@ import random
 # msg = tm.render(list_table=subs)
 #
 # print(msg)
+# import openai
+#
+# # Replace YOUR_API_KEY with your OpenAI API key
+# openai.api_key = "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"
+#
+#
+# def cube_checker(volume, side):
+#     if volume <= 0 or side <= 0:  # Проверка на недопустимые значения
+#         return False
+#     calculated_side = round(volume ** (1/3))  # Вычисление стороны параллелепипеда
+#     return calculated_side ** 3 == volume and calculated_side == side  # Проверка на равные стороны
+#
+# print(cube_checker(-12,2))
+# print(cube_checker(8, 3))
+# print(cube_checker(-8,-2))
+# print(cube_checker(0, 0))
+# print(cube_checker(125, 5))
+# print(cube_checker(125,-5))
+
+
+
+
 
 
